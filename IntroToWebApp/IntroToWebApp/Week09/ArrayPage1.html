@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //create an array of cars
+        var cars = ["Toyota", "Honda", "Volvo", "Buick", "Ford"];
+        //function to display the cars
+        function Display()
+        {
+            //get reference to the para1
+            var display = document.getElementById("para1");
+            display.innerHTML = "<ul>";
+            for (var i = 0; i < cars.length; i++)
+            {
+                display.innerHTML += "<li>" + cars[i] + "</li>";
+            }
+            display.innerHTML += "</ul>";
+        }
+        //function to add a car to the array
+        function addCar()
+        {
+            var display = document.getElementById("para1");
+            var input = document.getElementById("txtcar");
+            var newcar = input.value;
+
+            cars.push(newcar);
+            Display();
+        }
+        function removeLastCar()
+        {
+            var x = cars.pop();
+            alert("Removed car: " + x);
+        }
+        function removeFirstCar()
+        {
+            var x = cars.shift();
+            alert("Removed car: " + x);
+        }
+
+        function removeByIndex()
+        {
+            var index = document.getElementById("txtcar").value;
+            cars.splice(index, 1);
+        }
+        function search()
+        {
+
+        }
+    </script>
+</head>
+<body>
+    <h4>Javascript Arrays</h4>
+    <p>
+        You can create an array using the syntax:<br />
+        <i>var array_name = [item1, item2, ...]</i>
+        <br /><br />
+        You can also create an array using the <b>new</b>
+        keyword:<br />
+        <i>var array_name = new Array(item1, item2, ...)</i>
+    </p>
+    <hr />
+    <button onclick="Display();">Display Cars</button>
+    &nbsp; &nbsp;
+    <button onclick="addCar();">Add car</button>&nbsp;
+    <input type="text" id="txtcar" size="20" />
+    <br /><br />
+    <button onclick="removeFirstCar();">Remove first element</button>
+    &nbsp; &nbsp;
+    <button onclick="removeLastCar();">Remove last car</button>
+    &nbsp; &nbsp;
+    <button onclick="removeByIndex();">Remove at index in the text box</button>
+    <p id="para1"></p>
+</body>
+</html>

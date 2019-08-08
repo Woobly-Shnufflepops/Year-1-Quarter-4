@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92BEDA19-EF77-4EF0-8D79-ED0B8853BCBF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IntroToWebApp</RootNamespace>
+    <AssemblyName>IntroToWebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Week01\HTMLPage1.html" />
+    <Content Include="Week01\HTMLPage2.html" />
+    <Content Include="Week01\HTMLPage3.html" />
+    <Content Include="Week01\HTMLPage4.html" />
+    <Content Include="Week01\HTMLPage5.html" />
+    <Content Include="Week01\LinksAndListsPowers.html" />
+    <Content Include="Week02\HTMLTableAssignmentPowers.html" />
+    <Content Include="Week02\TablePage2.html" />
+    <Content Include="Week02\TablePage3.html" />
+    <Content Include="Week02\TablePage1.html" />
+    <Content Include="Week03\FormPage1.html" />
+    <Content Include="Week03\FormPage2.html" />
+    <Content Include="Week03\TravelAgencyPowers.html" />
+    <Content Include="Week04\HTMLPage1.html" />
+    <Content Include="Week04\HTMLPage2.html" />
+    <Content Include="Week04\HTMLPage3.html" />
+    <Content Include="Week04\HTMLPage4.html" />
+    <Content Include="Week04\HTMLPage5.html" />
+    <Content Include="Week04\HTMLPage6.html" />
+    <Content Include="Week04\HTMLPage7.html" />
+    <Content Include="Week04\Stylesheet1.css" />
+    <Content Include="Week05\HTMLPage1.html" />
+    <Content Include="Week05\HTMLPage2.html" />
+    <Content Include="Week05\HTMLPage3.html" />
+    <Content Include="Week05\HTMLPage4.html" />
+    <Content Include="Week05\PositionProperty\PositionPage1.html" />
+    <Content Include="Week05\PositionProperty\PositionPage2.html" />
+    <Content Include="Week05\PositionProperty\PostionPage3.html" />
+    <Content Include="Week05\SelectorsPowers.html" />
+    <Content Include="Week06\HTMLMidTermPowers.html" />
+    <Content Include="Week06\LanGear_logo.jpg" />
+    <Content Include="Week07\FloatPage1.html" />
+    <Content Include="Week07\HTMLPage1.html" />
+    <Content Include="Week07\HTMLPage2.html" />
+    <Content Include="Week07\TableCSSPowers.html" />
+    <Content Include="Week07\TablePage1.html" />
+    <Content Include="Week08\ButtonClickPage1.html" />
+    <Content Include="Week08\JSStringPowers.html" />
+    <Content Include="Week08\stringPage1.html" />
+    <Content Include="Week08\StringPage1_Lhouciene.html" />
+    <Content Include="Week08\windowPage1.html" />
+    <Content Include="Week08\windowPage2.html" />
+    <Content Include="Week08\WindowPage3.html" />
+    <Content Include="Week09\ArrayPage1.html" />
+    <Content Include="Week09\DatePage1.html" />
+    <Content Include="Week09\JSArraysPowers.html" />
+    <Content Include="Week09\MathPage1.html" />
+    <Content Include="Week10\TimerPage1.html" />
+    <Content Include="Week10\TimerPage2.html" />
+    <Content Include="Week10\TimerPage3.html" />
+    <Content Include="Week11\CreateNewElementPage1.html" />
+    <Content Include="Week12\doggo.jpg" />
+    <Content Include="Week12\doggo2.jpg" />
+    <Content Include="Week12\doggo3.jpg" />
+    <Content Include="Week12\doggo4.jpg" />
+    <Content Include="Week12\doggo5.jpg" />
+    <Content Include="Week12\doggo6.jpg" />
+    <Content Include="Week12\PowerFinalHTML.html" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

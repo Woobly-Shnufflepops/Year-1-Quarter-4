@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--Matthew Powers-->
+    <title>Matthew Powers</title>
+    <script>
+        var student = ["John", "Michelle", "Cooper", "Hal 9000", "Corey", "Sasquatch",
+        "Jennifer", "Vito", "Via", "Mia", "Brian", "Peter"];
+        var grades = [100, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89];
+        function Display()
+        {
+            var display = document.getElementById("para1");
+            var index = student.length;
+            for (var i = 0; i < index; i++)
+            {
+                display.innerHTML += student[i] + " " + grades[i] + "<br />";
+            }
+        }
+        function addStudent()
+        {
+            var name = document.getElementById("txtName").value;
+            var grade = document.getElementById("txtGrade").value;
+            student.push(name);
+            grades.push(grade);
+            Display();
+        }
+        function Average()
+        {
+            var display = document.getElementById("para1");
+            var total = 0;
+            for (var i = 0; i < grades.length; i++)
+            {
+                total += parseInt(grades[i]);
+            }
+            display.innerHTML = "The average grade is: " + total / parseInt(grades.length);
+        }
+        function highAndLow()
+        {
+            var display = document.getElementById("para1");
+            var high = 0;
+            var low = 9999999;
+            for (var i = 0; i < grades.length; i++)
+            {
+                if (parseInt(grades[i]) > high) high = parseInt(grades[i]);
+                if (parseInt(grades[i]) < low) low = parseInt(grades[i]);
+            }
+            display.innerHTML = "The high is: " + high + " and the low is: " + low;
+        }
+        function studentHighLow()
+        {
+            var display = document.getElementById("para1");
+            var studentHIghIndex = 0;
+            var studentLowIndex = 0;
+            var high = 0;
+            var low = 9999999;
+            for (var i = 0; i < grades.length; i++)
+            {
+                if (parseInt(grades[i]) > high)
+                {
+                    high = parseInt(grades[i]);
+                    studentHIghIndex = i;
+                }
+                if (parseInt(grades[i]) < low)
+                {
+                    low = parseInt(grades[i]);
+                    studentLowIndex = i;
+                }
+            }
+            display.innerHTML = "The student with the highest grade is: " + student[studentHIghIndex] + " and the student with the lowest grade is " + student[studentLowIndex];
+        }
+        function belowAverage()
+        {
+            var display = document.getElementById("para1");
+            var total = 0;
+            for (var i = 0; i < grades.length; i++)
+            {
+                total += parseInt(grades[i]);
+            }
+            total = total / parseInt(grades.length);
+            for (var i = 0; i < grades.length; i++)
+            {
+                if (parseInt(grades[i]) < total)
+                {
+                    display.innerHTML += student[i] + "<br />";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="Display();">Display all students</button><br />
+    <button onclick="addStudent();">Add new student</button>
+    <label>Student Name: </label><input type="text" id="txtName" />
+    <label>Grade: </label><input type="text" id="txtGrade" /><br />
+    <button onclick="Average();">Display Average</button><br />
+    <button onclick="highAndLow();">Display highest and lowest grades</button><br />
+    <button onclick="studentHighLow();">Display the students with highest and lowest grades</button><br />
+    <button onclick="belowAverage();">Students with below average grades</button>
+    <p id="para1"></p>
+</body>
+</html>

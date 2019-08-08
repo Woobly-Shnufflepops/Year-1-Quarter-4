@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--Matthew Powers-->
+    <title>Matthew Powers Mid-Term</title>
+    <style type="text/css">
+        input{position:relative}
+        #City{left:44px}
+        #Country{left:20px}
+        #PurchaseDate{left:75px}
+        #SerialNumber{left:74px}
+        #SendRegistration{vertical-align:}
+        .container{
+            height: 100px;
+            width: 750px;
+        }
+        .left{float:left;
+              width:350px;
+        }
+        .right{float:right;
+               width:400px;
+        }
+        #ButtonClass{position:relative;
+                     left:35%;
+        }
+        #text{position:relative;
+              left:20%
+        }
+        .part3{text-align:center;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <img src="../Week06/LanGear_logo.jpg" />
+            <h1>Product Registration</h1>
+            <hr />
+            <label for="FirstName">
+                First Name
+                <input type="text" name="FNameText" id="FName" size="45"/>
+            </label>
+            <label for="LastName">
+                 Last Name 
+                <input type="text" name="LNameText" id="LName" size="45"/>
+            </label> <br />
+            <label for="Address1">
+                Address #1 
+                <input type="text" name="Address1Text" id="Address1" size="75"/>
+            </label> <br />
+            <label for="Address2">
+                Address #2 
+                <input type="text" name="Address2Text" id="Address2" size="75"/>
+            </label><br />
+            <label for="City">
+                City
+                <input type="text" name="CityText" id="City" size="65"/>
+            </label>
+            <label for="State">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  State 
+                <input type="text" name="StateText" id="State" size="10"/>
+            </label>
+            <label for="Zip">
+                Zip 
+                <input type="text" name="ZipText" id="Zip" size="10"/>
+            </label><br />
+            <label for="Country">
+                Country 
+                <input type="text" name="CountryText" id="Country" value="United States" size="65"/>
+            </label>
+            <br /><br /><br />
+            <hr />
+            <br />
+            <label for="ItemPurchased">
+                Item Purchased 
+                <select name="ItemPurchased">
+                    <option value="LanPass115">LanPass115</option>
+                </select>
+            </label>
+            <label for="PurchaseDate">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Purchase Date
+                <input type="date" name="PurchaseDateText" id="PurchaseDate" size="40"/>
+            </label><br />
+            <label for="Serial Number">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Serial Number
+                <input type="text" name="SerialNumberText" id="SerialNumber" size="40" />
+            </label> <br /><br />
+            <hr />
+            <div class="container">
+                <div class="left">
+                    <fieldset id="fieldset">
+                        <legend>Used For (check One)</legend>
+                        <input type="radio" name="Button" id="Home" /><label for="Home">Home</label><br />
+                        <input type="radio" name="Button" id="Business" /><label for="Business">Business</label><br />
+                        <input type="radio" name="Button" id="Religious" /><label for="Religious">Religious or Charitable Institution</label><br />
+                        <input type="radio" name="Button" id="Government" /><label for="Government">Government</label><br />
+                        <input type="radio" name="Button" id="Educational" /><label for="Educational">Educational Institution</label><br />
+                    </fieldset>
+                </div>
+                <div class="right">
+                    <fieldset id="fieldset2">
+                        <legend>Network Operating System (check all that apply)</legend>
+                        <input type="checkbox" name="Netware" id="Netware" /><label for="Netware">Netware</label><br />
+                        <input type="checkbox" name="Banyan" id="Banyan" /><label for="Banyan">Banyan Vines</label><br />
+                        <input type="checkbox" name="Windows" id="Windows" /><label for="Windows">Windows or Charitable Institution</label><br />
+                        <input type="checkbox" name="IBM" id="IBM" /><label for="IBM">IBM Lan Server</label><br />
+                        <input type="checkbox" name="PC" id="PC" /><label for="PC">PC/NFS</label><br />
+                    </fieldset>
+                </div>
+            </div>
+            <br /><br /><br />
+            <hr />
+            <br />
+            <div id="ButtonClass">
+                <button type="button" id="SendRegistration">Send Registration</button>
+                <button type="button" id="Cancel">Cancel</button>
+            </div>
+            <br />
+            <div id="text">
+                LanGear Inc. - 414 Willow Way - Farley, SD 95312 - 1 (800) 555-2377
+            </div>
+            <br />
+            <table border="1">
+                <colgroup width="100px">
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                </colgroup>
+                <tr>
+                    <td></td>
+                    <td align="center"><b>5 pm</b></td>
+                    <td align="center"><b>7 pm</b></td>
+                    <td align="center"><b>9 pm</b></td>
+                    <td align="center"><b>11 pm</b></td>
+                </tr>
+                <tr>
+                    <td>Screen one</td>
+                    <td>Star Wars</td>
+                    <td>Empire Strikes Back</td>
+                    <td>Return of the Jedi</td>
+                    <td>The Exorcist</td>
+                </tr>
+                <tr>
+                    <td>Screen two</td>
+                    <td colspan="2">Dances with Wolves</td>
+                    <td colspan="2">Gone With the Wind</td>
+                </tr>
+                <tr>
+                    <td>Screen three</td>
+                    <td colspan="2">2001: A Space Odyssey</td>
+                    <td>The conversation</td>
+                    <td>5 Easy Pieces</td>
+                </tr>
+            </table>
+            <br />
+            <div class="part3">
+                <h1>HTML Practice Exercise</h1>
+                <h2><a href="LanGear_logo.jpg">James Madison University</a></h2>
+            </div>
+            <hr />
+            I love <i>HTML</i> because:
+            <ol>
+                <li>I learned it quickly.</li>
+                <li>I can make web pages using code.</li>
+                <li> It is fun.</li>
+            </ol>
+            <hr />
+            My Professor's e-mail address is <a href="LanGear_logo.jpg">clarketb@jmu.edu</a>
+            <br />
+            <a3>Have a great day!</a3>
+            <br />
+            <hr />
+            <strong>Nested Unordered List</strong>
+            <ul>
+                <li>This is the first item</li>
+                <li>This is the second item</li>
+                <ul style="list-style-type:disc">
+                    <li>This is the first subitem of the second item</li>
+                    <ul style="list-style-type:square">
+                        <li>And this is a subitem of a subitem</li>
+                        <li>Getting lost yet?</li>
+                    </ul>
+                    <li>This is the second subitem of the second item</li>
+                    <li>This is the third subitem of the second item</li>
+                </ul>
+                <li>This is the third item</li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>

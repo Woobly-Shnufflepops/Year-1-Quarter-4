@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h3>Additional Form Elements</h3>
+    <form>
+        <!--Input password-->
+        <label for="password">Enter Password:
+        <input type="password" name="inpsw" id="password" />
+        </label>
+        <br /><br />
+    <!--new html5 form elements-->
+        <label for="color">Select your favorite color:</label>
+        <input type="color" name="favcolor" id="color" />
+        <br /><br />
+
+        <!--date input-->
+        <label for="">Enter birthday</label>
+        <input type="date" id="bday" />
+        <br /><br />
+
+        <!--date input with min and max values-->
+        <label for="">Enter some date</label>
+        <input type="date" id="bday" min="2000-01-01"
+                max="2017-06-30" />
+        <br /><br />
+        <!--using Datetime-local-->
+        Enter datetime local:
+        <input type="datetime-local" />
+        <br /><br />
+        <!-------------
+            input email
+            -->
+        Enter your email:
+        <input type="email" />
+
+        <!--a form should always contain a 
+            submit button to send the data to
+            a server-->
+        <input type="submit" />
+
+        <br /><br />
+        <!--input numbers-->
+        Enter a number:
+        <input type="number" />
+        <br /><br />
+        <!--restrict the input interval with
+            min and max -->
+        Enter quantity:
+        <input type="number" min="5" max="50"
+               value="15" step="2" />
+    </form>
+</body>
+</html>
+<!--
+Assignment: Create a form for a travel agency
+    
+    your page should show company name with a logo
+    (some image)
+    a paragraph to highlight the company mission
+    such as:
+    (Professional and personalized planning for 
+    all of our clients. We are a small team of destination 
+    experts focusing solely on European travel. 
+    All of our specialists have first hand travel experience 
+    in Europe, allowing us to provide you personal experiences,
+     knowledge and a passion for European travel 
+    that you won't find anywhere else.)
+       
+    Provide form elements to:
+
+    Contact Info:
+     Enter name email, email again, phone
+    Address
+
+    Travel Info:
+    Enter country to travel to
+    Enter date you intend to travel
+    Enter date you intend to return
+    Enter number of nights intend to travel
+    total number of travelers
+    Specify if travel dates are flexible with a couple
+    of radio buttons yes/no
+
+    Transportation Info:
+    Airport transfer (provide radio buttons yes no)
+    Preferred Flight Class: (provide drop dow control
+    Select one, Economy class, business class, First class)
+
+    Rental car needed? (provide yes no radio buttons)
+    Preferred Car class:  (provide drop down list:
+    Select one, Economy, Compact, FullSize,Minivan, Luxury)
+
+    Accomodation Info:
+    provide elements to select hotel stars
+    Add TextArea to enter any comments
+
+-->

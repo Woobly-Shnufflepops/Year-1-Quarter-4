@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>;
+<body>
+    <form name="form1" action="" method="get">
+        <label for="fn" >First name:</label> 
+        <input type="text" name="txtFirstname" id="fn" /><br />
+        
+        <label for="ln" style="width:50%">Last name:</label>
+        <input type="text" name="txtLastname" id="ln" /><br />
+
+        <!--radio buttons-->
+        <input type="radio" name="shipment" id="ship1" /><label for="ship1">Ground</label>
+        <input type="radio" name="shipment" id="ship2" /><label for="ship2">2-Day</label>
+        <input type="radio" name="shipment" id="ship3" /><label for="ship3">Overnight</label>
+        <br /><br />
+
+        <!--checkboxes-->
+        Select any or more cars you like:<br />
+        <input type="checkbox" name="chkBMW" id="bmw" /><label for="bmw">BMW</label>
+        <input type="checkbox" name="chkLexus" id="lexus" /><label for="lexus">Lexus</label>
+        <input type="checkbox" name="chkMercedes" id="mercedes" /><label for="mercedes">Mercedes</label>
+        
+        <!--drop down element: Combobox/Listbox-->
+        <br /><br />
+        <select name="food">
+            <option value="monster_burger">Monster Burger</option>
+            <option value="chicken_sandwich">Chicken Sandwich</option>
+            <option value="fish_sandwich">Fish Sandwich</option>
+        </select>
+        <br />
+        <!--another form of dropdown contro
+            using the optgroup tag to group the
+            lists within the control-->
+        <select name="cars">
+            <optgroup label="U.S">
+                <option>Ford Focus</option>
+                <option>Chevrolet Impala</option>
+                <option>Buick</option>
+                <option>Crysler</option>
+            </optgroup>
+            <optgroup label="German">
+                <option>Mercedes</option>
+                <option>BMW</option>
+                <option>Volkswagen</option>
+            </optgroup>
+            <optgroup label="Japenese">
+                <option>Honda Crv</option>
+                <option>Honda Civic</option>
+                <option>Honda Accord</option>
+            </optgroup>
+        </select>
+
+
+
+        <!--should always have a submit button-->
+        <input type="submit" />
+
+
+    </form>
+
+</body>
+</html>

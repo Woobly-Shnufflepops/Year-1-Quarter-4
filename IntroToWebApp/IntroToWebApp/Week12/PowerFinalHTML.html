@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Matthew Powers</title>
+    <!--Matthew Powers-->
+    <script>
+        //Question 1
+        function sqrRootNum() {
+            try {
+                var num = document.getElementById("Counter").value;
+                var display = document.getElementById("txtBox1");
+                num = Math.sqrt(num);
+                display.value = num;
+            } catch (e) {
+
+            }
+        }
+        //**********************************************************
+        //Question 2
+        function dateDifference() {
+            var selectedDate = new Date(document.getElementById("birthDay").value);
+            var today = new Date();
+            var yearDif = Math.abs(today.getFullYear() - selectedDate.getFullYear());
+            var monthDif = Math.abs((today.getMonth() + 1) - (selectedDate.getMonth() + 1));
+            var dayDif = Math.abs(today.getDate() - selectedDate.getDate() - 1);
+            alert("The date difference is " + yearDif + " years, " + monthDif + " months, and " + dayDif + " days");
+        }
+        //***********************************************************
+        //Question 3
+        var values = [];
+        function randNums() {
+            for (var i = 0; i < 50; i++) {
+                values[i] = Math.floor(Math.random() * 1000)
+            }
+        }
+        //***********************************************************
+        //Question 4
+        function minMaxAndAverage() {
+            var average = 0;
+            var min = 99999999;
+            var max = 0;
+            for (var i = 0; i < values.length; i++) {
+                average += values[i];
+                if (min > values[i]) {
+                    min = values[i];
+                }
+                if (max < values[i]) {
+                    max = values[i];
+                }
+            }
+            average = Math.floor(average / values.length);
+            alert("Minimum: " + min + " Maximum: " + max + " Average: " + average);
+        }
+        //***********************************************************
+        //Question 5
+        function changeColor() {
+            var hexNum = document.getElementById("hexCode").value;
+            var color = '#';
+            document.getElementById("selectColor").style.backgroundColor = color + hexNum;
+        }
+        //***********************************************************
+        //Question 6
+        function getRandomColor() {
+            var hexLetters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                var index = Math.floor(Math.random() * 16);
+                color += hexLetters[index];
+            }
+            return color;
+        }
+        function changeRandomColor() {
+            var color = getRandomColor();
+            document.getElementById("randomColor").style.backgroundColor = color;
+        }
+        //***********************************************************
+        //Question 7
+        function moveDiv() {
+            var theDiv = document.getElementById("smallDiv");
+            var container = document.getElementById("container").offsetWidth;
+            var pos = 0;
+            var timerID = setInterval(moving, 1000)
+            function moving() {
+                if (pos >= container -30) {
+                    clearInterval(timerID);
+                }
+                else {
+                    pos += 10;
+                    theDiv.style.left = pos + "px";
+                }
+            }
+        }
+        //***********************************************************
+        //Question 8
+        var pics = [];
+        pics[0] = new Image();
+        pics[0].src = "doggo.jpg";
+
+        pics[1] = new Image();
+        pics[1].src = "doggo2.jpg";
+
+        pics[2] = new Image();
+        pics[2].src = "doggo3.jpg";
+
+        pics[3] = new Image();
+        pics[3].src = "doggo4.jpg";
+
+        pics[4] = new Image();
+        pics[4].src = "doggo5.jpg";
+
+        pics[5] = new Image();
+        pics[5].src = "doggo6.jpg";
+
+        var timerID;
+        var i = 0;
+        function doggoCycle() {
+            var doggos = document.getElementById("doggoSource");
+            doggos.src = pics[i].src;
+            if (i >= 5) {
+                i = 0;
+            }
+            else i++;
+        }
+        function startTimer() {
+            setInterval(doggoCycle, 1500);
+        }
+        //***********************************************************
+        //Question 9
+        function makeATable() {
+            var table = document.createElement("table");
+            var tr1 = document.createElement("tr");
+            var tr2 = document.createElement("tr");
+            var tr3 = document.createElement("tr");
+            var th1 = document.createElement("th");
+            var th2 = document.createElement("th");
+            var th3 = document.createElement("th");
+            var th4 = document.createElement("th");
+            var th5 = document.createElement("th");
+            var th6 = document.createElement("th");
+            var th7 = document.createElement("th");
+            var th8 = document.createElement("th");
+            var th9 = document.createElement("th");
+            var text1 = document.createTextNode("Car Make");
+            var text2 = document.createTextNode("Car Model");
+            var text3 = document.createTextNode("Year");
+            var text4 = document.createTextNode("Toyota");
+            var text5 = document.createTextNode("Corolla");
+            var text6 = document.createTextNode("2015");
+            var text7 = document.createTextNode("Honda");
+            var text8 = document.createTextNode("Civic");
+            var text9 = document.createTextNode("2012");
+            th1.appendChild(text1);
+            th2.appendChild(text2);
+            th3.appendChild(text3);
+            th4.appendChild(text4);
+            th5.appendChild(text5);
+            th6.appendChild(text6);
+            th7.appendChild(text7);
+            th8.appendChild(text8);
+            th9.appendChild(text9);
+            tr1.appendChild(th1);
+            tr1.appendChild(th2);
+            tr1.appendChild(th3);
+            tr2.appendChild(th4);
+            tr2.appendChild(th5);
+            tr2.appendChild(th6);
+            tr3.appendChild(th7);
+            tr3.appendChild(th8);
+            tr3.appendChild(th9);
+            table.appendChild(tr1);
+            table.appendChild(tr2);
+            table.appendChild(tr3);
+            document.getElementById("div1").appendChild(table);
+        }
+    </script>
+    <style>
+        /*Question 7*/
+        #smallDiv{height: 30px; width: 30px; border-style: solid; background-color:green; position:absolute;}
+    </style>
+</head>
+<!--Question 3-->
+<body onload="randNums();">
+    <!--Question 1-->
+    <input type="number" id="Counter" min="0" max="10" step="0.1"/> <br />
+    <input type="text" id="txtBox1" /> <button onclick="sqrRootNum();" id="sqrRoot">Find the Square Root</button>
+    <hr />
+    <br />
+    <!------------------------------------------------------------------->
+    <!--Question 2-->
+    <input type="date" id="birthDay" /><button onclick="dateDifference();" id="dateDif">Find the difference between selected date and today!</button>
+    <hr />
+    <br />
+    <!------------------------------------------------------------------->
+    <!--Question 4-->
+    <button onclick="minMaxAndAverage();">Find the minimum, maximum, and average</button>
+    <hr />
+    <br />
+    <!------------------------------------------------------------------->
+    <!--Question 5-->
+    <button onclick="changeColor();" id="selectColor">Select the background color for the button and change it!</button><br />
+    Enter the hex code here (0123456789ABCDEF)<input type="text" id="hexCode" maxlength="6"/>
+    <hr />
+    <br />
+    <!------------------------------------------------------------------->
+    <!--Question 6-->
+    <button onclick="changeRandomColor();" id="randomColor">Change the button to a random color!</button>
+    <hr />
+    <br />
+    <!------------------------------------------------------------------->
+    <!--Question 7-->
+    <button onclick="moveDiv();">Watch it move!</button><br />
+    <div id="container" style="width: 100%">
+        <div id="smallDiv"></div>
+    </div>
+    <br /><br />
+    <hr />
+    <br />
+    <!------------------------------------------------------------------->
+    <!--Question 8-->
+    <img src="doggo.jpg" id="doggoSource"/><br />
+    <button onclick="startTimer();" id="moreDoggo">Show more doggos!</button>
+    <hr />
+    <br />
+    <!------------------------------------------------------------------->
+    <!--Question 9-->
+    <button onclick="makeATable();">Make a table of cars</button>
+    <div id="div1"></div>
+</body>
+</html>

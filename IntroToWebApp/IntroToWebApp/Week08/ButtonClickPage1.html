@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    Enter first value:<input type="text" id="txtv1" size="5" />
+    &nbsp; &nbsp; &nbsp; 
+    Enter second value:<input type="text" id="txtv2" size="5" />
+    &nbsp; &nbsp; &nbsp; <button onclick="addValues();">Add</button>
+    <br /><br />
+    <!------------------------------------------------------->
+    <button onclick="displayRandoms()">Display Randoms</button>
+    <p id="para1">
+
+    </p>
+
+
+
+
+
+    <!---define a function that runs when a button is clicked-------->
+    <script>
+        function displayRandoms()
+        {
+            //using math.random() that generates a random double from 0 to 1
+            //(not incluidng 1)
+            var p1 = document.getElementById("para1");
+
+            p1.innerHTML = "";
+            for (var i = 1; i <= 10; i++)
+            {
+                var x = Math.random();
+                p1.innerHTML += x + "<br />";
+            }
+        }
+        //==========================================
+        function addValues()
+        {
+            //get references to the textboxes
+            var input1 = document.getElementById("txtv1");
+            var input2 = document.getElementById("txtv2");
+
+            var v1 = parseFloat(input1.value); //use value property to get the data entered
+            //in a textbox (it is read as a string)
+            var v2 = parseFloat(input2.value);
+
+            var result = v1 + v2;
+            document.getElementById("para1").innerHTML = v1 + " + " + v2 + " = " + result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        strong {font-size:large} /*This is type selector: it affects all tags with the type or name : strong*/
+        div strong{color:red; font-weight:bolder;} /*This is descendent selector. Only
+                                                    tag element: strong that are contained
+                                                    in a div tag are affected */
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <p>The red style <strong>has been applied to this element.</strong></p>
+    </div>
+
+    <p>The red style<strong> has not been applied to this element.</strong></p>
+</body>
+</html>

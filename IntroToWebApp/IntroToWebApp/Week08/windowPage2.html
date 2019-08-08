@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--define a p element that can be accessed from javascript-->
+    <p id="para1">
+
+    </p>
+    <p id="para2">
+        This text, within para2, can be accessed through javascript
+        using either the innerText property or the innerHTML property
+    </p>
+    <script>
+        //var p1 = window.document.getElementByID("para1");
+        //you can omit the window parent object
+        var p1 = document.getElementById("para1");
+        //p element has innerText property and innerHTML property
+        p1.innerHTML = "accessing this p element from javascript" + "<br />" + "this is the second line";
+        //--------------------------------------------------------------------------------------------------
+        //access para2 and read its contents, then display it to a messagebox
+        var p2 = document.getElementById("para2");
+        var text = p2.innerText;
+        //window.alert(...)
+        alert(text);
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function getCharAtIndex() {
+            var display = document.getElementById("para1");
+
+            var mainstring = document.getElementById("txtmainstr").value;
+            //get index
+            var index = parseInt(document.getElementById("txtindex").value);
+            //apply the charAt method, which returns the character at
+            //the given index
+            //need to make sure that the index is valid
+            if (index >= 0 && index < mainstring.length) {
+                var ch = mainstring.charAt(index);
+                var chCode = mainstring.charCodeAt(index);
+
+                display.innerHTML = "character at index: " + index +
+                                " is: " + ch + "<br />" +
+                                "character code is: " + chCode;
+            }
+            else
+                display.innerHTML = "index out of range error";
+            
+        }
+        //------------------
+        function search() {
+            var display = document.getElementById("para1");
+            var mainstring = document.getElementById("txtmainstr").value;
+            var searchstr = document.getElementById("txtsearchstr").value;
+            //apply indexOf
+            var index = mainstring.indexOf(searchstr);
+            if (index >= 0) {
+                display.innerHTML = "\\" + searchstr + "\\" +
+                    " found at index: " + index;
+            }
+            else
+                display.innerHTML = "\\" + searchstr + "\\" +
+                    " was not found";
+
+        }
+        //----------------------------------
+        function split() {
+            var display = document.getElementById("para1");
+            var mainstring = document.getElementById("txtmainstr").value;
+            //apply split
+            var tokens = mainstring.split(" ");
+            //display the array
+            for (var i = 0; i < tokens.length; i++) {
+                display.innerHTML += tokens[i] + "<br />";
+            }
+        }
+        //-----------------------------------------
+        function substr() {
+            var display = document.getElementById("para1");
+            var mainstring = document.getElementById("txtmainstr").value;
+            var start = parseInt(document.getElementById("txtstart").value);
+            var end = parseInt(document.getElementById("txtend").value);
+            //apply method
+            var sub = mainstring.substring(start, end);
+            //display result
+            display.innerHTML = sub;
+        }
+    </script>
+</head>
+<body>
+    <h4>Javascript Strings</h4>
+    <div>
+        input string:
+        <input type="text" id="txtmainstr" size="80" 
+               value="a string is an array of characters. the array is zero-based. The first character is at index 0. The string object defines the property length as well as numerous methods." />
+        <br /><br />
+        <button onclick="getCharAtIndex()">charAt(index)</button>
+        &nbsp;&nbsp;<input type="text" id="txtindex" size="3" />
+
+        <!--
+            string.indexOf(searchvalue,start)
+            start is optional. default=0;
+            return the index of the searchvalue or -1 if not found
+        -->
+        <!--Add textbox to enter search value
+            Add a button to apply the indexOf method
+            Display result-->
+        <br />
+        <hr />
+        <p>Searching for a sub string within a string</p>
+        Enter search string:
+        <input type="text" id="txtsearchstr" size="15" />
+        &nbsp;&nbsp;<button onclick="search();">Search</button>
+        
+        <br />
+        <hr />
+
+        <!--
+            split method:
+            is used to split a string into an array of substrings
+            var tokens = mainstr.split(separator);
+
+        --> 
+        <button onclick="split()">Split main string into substrings</button>    
+       
+        <br />
+        <hr />
+        <!--
+        substring method: extracts characters from start to end
+            not including char at end
+
+            var sub = string.substring(start,end);
+            
+            //end is optional. default end of mainstring    
+        -->
+        <button onclick="substr()">sub string</button>
+        &nbsp;start:<input type="text" id="txtstart" size="3" />
+        &nbsp;end:<input type="text" id="txtend" size="3" />
+
+        <br /><br />
+        <p id="para1"></p>
+    </div>
+</body>
+</html>
+<!--
+Lab:strings
+    new page
+    provide a textbox for main string
+    provide a button to return and display the index of the first space
+    provide a button to return and display the index of the last space
+    (you have indexOf and lastindexOf methods) 
+    (check documentation: 
+    https://www.w3schools.com/jsref/jsref_obj_string.asp
+    ) 
+    
+    use a combination of methods
+    to get/display the second word in main string at a button click
+    to get/display the last word in main string at a button click  
+-->

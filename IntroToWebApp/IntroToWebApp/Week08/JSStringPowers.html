@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--Matthew Powers-->
+    <title>Matthew Powers</title>
+    <script>
+        function getFirstSpace()
+        {
+            var display = document.getElementById("para1");
+            var mainstr = document.getElementById("txtmainstr").value;
+            var index = mainstr.indexOf(" ");
+            display.innerHTML = index;
+            return index;
+        }
+        //-----------------------------------------------------------------------------
+        function getLastSpace()
+        {
+            var display = document.getElementById("para1");
+            var mainstr = document.getElementById("txtmainstr").value;
+            var index = mainstr.lastindexOf(" ");
+            display.innerHTML = index;
+            return index;
+        }
+        //-----------------------------------------------------------------------------------
+        function getSecondWord()
+        {
+            var display = document.getElementById("para1");
+            var mainstr = document.getElementById("txtmainstr").value;
+            var start = mainstr.indexOf(" ");
+            var end = mainstr.indexOf(" ", start + 1);
+            var secondWord = mainstr.substring(start, end);
+            display.innerHTML = secondWord;
+        }
+        //--------------------------------------------------------------------------------
+        function getLastWord() {
+            var display = document.getElementById("para1");
+            var mainstr = document.getElementById("txtmainstr").value;
+            var start = mainstr.lastIndexOf(" ");
+            var lastWord = mainstr.substring(start + 1);
+            display.innerHTML = lastWord;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="txtmainstr" size="200" value="The FitnessGram Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start."/>
+        <br />
+        <button onclick="getFirstSpace()">First blank space location</button>
+        <br /><br />
+        <!-------------------------------------------------------------->
+        <button onclick="getLastSpace()">Get last blank space location</button>
+        <br /><br />
+        <!-------------------------------------------------------------->
+        <button onclick="getSecondWord()">Get second word</button>
+        <br /><br />
+        <button onclick="getLastWord()">Get last word</button>
+        <br />
+        <p id="para1"></p>
+    </div>
+</body>
+</html>

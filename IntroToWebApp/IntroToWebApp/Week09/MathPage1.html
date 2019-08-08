@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function minMax()
+        {
+            var minValue = Math.min(40, 100, 60, 77, 33, 88, 92, 42);
+            var maxValue = Math.max(40, 20, 60, 77, 33, 88, 92, 42);
+            alert("The min value is: " + minValue + "\n" + "the max value is: " + maxValue);
+        }
+        function roundFloorCeiling()
+        {
+            var v1 = document.getElementById("txtValue").value;
+            //apply math functions
+            var r1 = Math.round(v1);
+            var r2 = Math.ceil(v1);
+            var r3 = Math.floor(v1);
+            //display
+            var display = document.getElementById("para1");
+            display.innerHTML = "Math.round(" + v1 + ") = " + r1 + "<br />" + "Math.ceil(" + v1 + ") = " + r2 + "<br />" + "Math.floor(" + v1 + ") = " + r3 + "<br />"
+        }
+
+        function displayRandomValue()
+        {
+            var x = Math.random();
+            var max = 50;
+            var min = 10;
+            var display = document.getElementById("para1");
+            display.innerHTML = Math.ceil(min + x * max - min);
+        }
+        function power()
+        {
+            var display = document.getElementById("para1");
+            var base = parseFloat(document.getElementById("txtBase").value);
+            var exponent = parseFloat(document.getElementById("txtExponent").value);
+            display.innerHTML = Math.pow(base, exponent);
+        }
+    </script>
+</head>
+<body>
+    <h4>Javascript Math Object</h4>
+    <p>
+        The Math object defines a list of math functions such as:
+        <br />
+        <i>max, min, pow, random, sqrt, floor, ceil, etc</i><br />
+        as well as some trig functions: <i>sin, cos, tan</i>
+    </p>
+    <hr />
+    <button onclick="minMax();">min max</button>
+    <br /><br />
+    Enter a value:<input type="text" id="txtValue" size="5" />
+    &nbsp; &nbsp; <button onclick="roundFloorCeiling();">Round, floor, ceiling</button>
+    <br /><br />
+    <button onclick="displayRandomValue();">Display a random value</button>
+    <br /><br />
+    Enter a base:<input type="text" id="txtBase" size="5" />
+    Enter an exponent:<input type="text" id="txtExponent" size="5" />
+    <button onclick="power();">Compute the power (base ^ exponent)</button>
+    <p id="para1"></p>
+</body>
+</html>

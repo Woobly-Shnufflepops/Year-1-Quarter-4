@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        img{float:left;}
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: darkolivegreen;
+            color: darkblue;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+        div.mydivs{float:left;}
+        .box1 {
+            width: 200px;
+            height: 150px;
+            background-color: orange;
+            color: darkviolet;
+            overflow:auto;
+        }
+    </style>
+</head>
+<body>
+    <h4>The float Property</h4>
+    <p>
+        This property is used for positioning and layout on web pages.
+    </p>
+    <p>
+        The property can be assigned 4 values: <br />
+        left: the element floats to the left of its container <br />
+        right: the element floats to the right of its container<br />
+        none: the element does not float. This is the default value<br />
+        inherit: the value is inherited from its parent
+    </p>
+    <p>
+        You can use it to layout div tags next to each other horizontally.<br />
+        You can also use it to have text wrap around an image
+    </p>
+    <hr />
+    <h5>Text wrapped around an image</h5>
+    <p>
+        This is just dummy text ajslkdfnmlkasdmnfpoasmndklfnasl;dmf
+        sdnfmlkasmdokpf joesdjkfnmojkasdn foksajdfjahes dofnosdjhfosadhjf
+        doskjjfkosadj ofiasdojfk sdlknf ok sdof sdjfosdjkfl jsdlkfjlksd jfok
+        jdkosajfokasjdokfmoksdajfoimsdlkfmlksdmflksadmflk;msdoifmnsdao
+        foskajdlfmnslakdjfosmadofnlksdjfosmadflkjflasdmflmsdal;mflkasdmf;lasmdfl
+        <img src="../Week06/LanGear_logo.jpg" alt="LanGearLogo"/>
+    </p>
+    <hr />
+    <h5 style="float:none">Layout div tags with float</h5>
+    <div class="mydivs">div1</div>
+    <div class="mydivs">div2</div>
+    <div class="mydivs">div3</div>
+    <div class="mydivs">div4</div>
+
+    <hr />
+    <br />
+    <h5>The overflow property</h5>
+    <p>
+        This property specifies whether to clip content or to add scrollbars when the content
+        of an element is too big to fit in a specified area of an element, such as a div o p tag
+    </p>
+    <p>
+        This property can be set to the following values:<br />
+        <i>visible</i>: Default: overflow is not clipped. It renders outside the box
+        <i>hidden</i>: The overflow is clipped, and the rest of the content is visible
+        <i>scroll</i>: the overflow is clipped, but the scrollbar is added to see the rest of the content<br />
+        <i>auto</i>: same as scroll, but scrollbar is added only when needed.
+    </p>
+    <p class="box1">
+        Some random text. Some random text. Some random text. Some random text. Some random text.
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+        Some random text. Some random text. Some random text. Some random text. Some random text. 
+    </p>
+</body>
+<!--
+Exercise:
+    New pages:
+    Page 1: An image floated to the right with text wrapped around it     
+    ================================================================
+    Page 2: 8 divs (size 150x150) where there are 4 divs per line
+    first line on the same horizontal line, and second 4 on the second horizontal line
+    ================================================================
+    Page 3:
+    Have 3 pages side by side each contain some text and each with size 200x150
+    ================================================================
+    llok up: overflow-x and overflow-y
+-->
+</html>

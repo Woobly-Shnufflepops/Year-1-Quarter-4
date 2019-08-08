@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+
+        /*
+            The element1~element2 selector matches occurences of element2
+            that are preceded by element1.
+
+            Both elements must have the same parent, but element2 does not have to be
+            immediately preceded by element1.
+        */
+
+        /*Set a background color for all <ul> elements that are preceded by a <p> element
+            with the same parent:
+        */
+        p ~ ul{
+            background: #ff0000;
+        }
+    </style>
+
+</head>
+<body>
+    <div>A div element.</div>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+    <p>The first paragraph.</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+    <h2>Another list</h2>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+</body>
+</html>

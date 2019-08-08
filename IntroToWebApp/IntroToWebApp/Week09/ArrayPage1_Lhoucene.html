@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //create an array of cars
+        var cars = ["Toyota", "Honda", "Volvo", "Buick", "Ford"];
+        //function to display the cars array
+        function display() {
+            //get reference to the para1
+            var display = document.getElementById("para1");
+            display.innerHTML = "<ul>";
+            for (var i = 0; i < cars.length; i++) {
+                display.innerHTML += "<li>" + cars[i] + "</li>";
+            }
+            display.innerHTML += "</ul>";
+        }
+        //function to add a car to the array
+        function addCar() {
+            //use the push() method wich adds an element
+            //to the end of an array
+            //or use the unshift() method to add an 
+            //element at the beginning of an array
+
+            //read the new car from txtcar
+            var display = document.getElementById("para1");
+            var input = document.getElementById("txtcar");
+            var newcar = input.value;
+            //add it to the array
+            cars.push(newcar);
+            //or  cars.unshift(newcar);
+
+            //display the array
+            display();
+        }
+        //Removing an element from an array
+        //use pop to remove the last element
+        function removeLast() {
+            var car = cars.pop();
+            alert(car + " has been removed");
+        }
+        //use shift to remove the first element
+        function removeFirst() {
+            var car = cars.shift();
+            alert(car + " has been removed");
+        }
+        //remove by index
+        function removeByIndex() {
+            //get index from a textbox
+            var index = document.getElementById("txtindex").value;
+            //use the splice method
+            //    cars.splice(index,1); removes 1 element
+            //    at the given index. returns an array containing
+            //    the removed cars
+            var removedcars = cars.splice(index, 1);
+            alert(removedcars[0] + " has been removed");
+
+        }
+        //to search for an element in an array you can use
+        //the indexOf method
+        //syntax:  var index = array_name.indexOf(item,start);
+        //item: to search
+        //start: is optional to indicate index from which to start
+        //       the search. if not provided it is replaced by 0
+        //returns the index of the item or -1 if not found.
+
+        function search() {
+            //read item to search from a textbox
+            var car = document.getElementById("txtsearchcar").value;
+            //apply the indexOf method
+            var index = cars.indexOf(car);
+            //respond accordingly
+            if (index >= 0)
+                alert(car + ": found at index: " + index);
+            else
+                alert(car + ": could not be found");
+        }
+
+    </script>
+</head>
+<body>
+    <h4>Javascript Arrays</h4>
+    <p>
+        You can create an array using the syntax:<br />
+        <i>var array_name = [item1,items2,....]</i> 
+        <br /><br />
+        You can also create an array using the <b>new</b>
+        keyword:<br />
+        <i>var array_name = new Array(item1,item2,...)</i>
+    </p>
+    <hr />
+    <button onclick="display();">Display cars</button>
+    &nbsp;&nbsp;
+    <button onclick="addCar();">Add car</button>&nbsp;
+    <input type="text" id="txtcar" size="20" />
+    <br /><br />
+    <button onclick="removeFirst();">Remove first element</button>
+    &nbsp;&nbsp;<button onclick="removeLast();">Remove last element</button>
+    &nbsp;&nbsp;<button onclick="removeByIndex();">Remove car at index:</button>
+    <input type="text" id="txtindex" size="3" />
+    <br /><br />
+    <button onclick="search();">Search for a car:</button>
+    <input type="text" id="txtsearchcar" size="10" />
+
+    <br />
+    <p id="para1"></p>
+</body>
+<!--
+Lab assignment:
+    new page
+    create two arrays: students and grades
+    fill the students array with at least a dozen names
+    fill the grades array with as many grades as students
+    (these are parallel arrays where each student has a grade)
+    
+    Provide GUI to:
+    1. Display all the students and their grades 
+    where each line contain a student name and the grade 
+    2. Add new student and grade earned   
+    3. Compute/display the average of all the grades
+    4. Determine and display the lowest and highest grades
+    5. Determine/display the students with the lowest and 
+       highest grade
+    6. display all students whose grades are below average 
+
+-->
+</html>

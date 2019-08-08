@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function currentDate()
+        {
+            var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var currentDateTime = new Date();
+            //Get the day of the week
+            var dayOfWeek = currentDateTime.getDay();
+            document.getElementById("para1").innerHTML = currentDateTime + "<br /><br />" + "The day of the week is: " + days[dayOfWeek];
+        }
+    </script>
+</head>
+<body>
+    <!--
+        
+        There are four ways of instantiating a date object:
+        
+        new Date()
+        new Date(miliseconds)
+        new Date(dateString)
+        new Date(year, month, day, hours, minutes, seconds, miliseconds)
+
+        Here are a few examples of instancing a date:
+
+        today = new Date() --current date and time
+        birthday = new Date("March")
+    -->
+    <h4>Javascript Date Object</h4>
+    <button onclick="currentDate();">Display current date and time</button>
+    <br /><br />
+    <p id="para1"></p>
+</body>
+</html>

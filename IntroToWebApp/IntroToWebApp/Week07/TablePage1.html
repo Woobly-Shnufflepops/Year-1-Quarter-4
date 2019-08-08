@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        /*Styling a table*/
+
+        /*Adding a border*/
+        table{border-collapse:collapse; width:75%}
+        table, table, td {
+            border: 1px solid black;
+        }
+
+        /*Adding width and height. Alignment. Padding*/
+        th{height:50px; text-align:left;} /*See table selectors for width*/
+        td{height:50px; padding:15px; vertical-align:bottom;} /*Align text in td cells to bottom*/
+
+        /*Adding pseudo-class hover
+            as the mouse hovers over an element, such as tr, we want the background color to change
+        */
+        tr:hover{background-color:lightgray;}
+
+        /*adding pseudo-class to provide all even rows similar color*/
+        tr:nth-child(even){background-color:#e2e2e2;}
+
+        /*add background and foreground color for the table heading*/
+        tr:first-child{background-color:black; color:yellow;}
+
+    </style>
+</head>
+<body>
+    <h4>Applying CSS to Tables</h4>
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Savings</th>
+        </tr>
+
+        <tr>
+            <td>John</td>
+            <td>Williams</td>
+            <td>$1200</td>
+        </tr>
+
+        <tr>
+            <td>Michelle</td>
+            <td>Williams</td>
+            <td>$5995</td>
+        </tr>
+
+        <tr>
+            <td>Steve</td>
+            <td>Carlson</td>
+            <td>$200</td>
+        </tr>
+
+        <tr>
+            <td>JoeAnne</td>
+            <td>Brown</td>
+            <td>$500</td>
+        </tr>
+    </table>
+    <br />
+    <hr /><br />
+    <h4>Dealing with table overflow</h4>
+    <div style="overflow-x:auto">
+        <table class="table2">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+                <th>grade</th>
+            </tr>
+
+            <tr>
+                <td>John</td>
+                <td>Williams</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+            </tr>
+
+            <tr>
+                <td>Michelle</td>
+                <td>Williams</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+            </tr>
+
+            <tr>
+                <td>Steve</td>
+                <td>Carlson</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+            </tr>
+
+            <tr>
+                <td>JoeAnne</td>
+                <td>Brown</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+                <td>95</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

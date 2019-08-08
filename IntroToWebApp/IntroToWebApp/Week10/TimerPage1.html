@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #para1{width:40%; font-size:larger; position:relative;
+               background-color:#00ff90;
+        }
+        #div1{width:150px; height:150px; background-color:cornflowerblue;}
+    </style>
+
+    <!------------------------------------------------------>
+
+    <script>
+        function changeStyles() {
+            document.getElementById("para1").style.backgroundColor = "#bbaadd";
+            document.getElementById("para1").style.fontSize = "24px";
+            document.getElementById("para1").style.left = "10%";
+        }
+        function changeDivStyle() {
+            document.getElementById("div1").style.visibility = "hidden";
+        }
+        function visibleBox() {
+            document.getElementById("div1").style.visibility = "visible";
+        }
+        function popupWindow() {
+            //open a window using the window.open method. It returns a reference to the window,
+            //which you can use to write to it and close it
+            var mywindow = window.open("", "", "width = 300, height = 25");
+            //write some text to it
+            mywindow.document.write("CONGRADULATIONS! YOU'VE WON!");
+            setTimeout(function () { mywindow.close(); }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <h4>Javascript Timers</h4>
+    <p>
+        Two timers are defined:<br />
+        *one-shot timer: <i>setTimeout(function, miliseconds)</i>
+        *Interval timer: <i>setInterval(function, miliseconds)</i>
+    </p>
+    <p>
+        the <i>setTimeout</i> starts the function after a certain time,
+        stated in miliseconds, has elapsed.<br />
+
+        The <i>setInterval</i> runs the function every intervaltime,
+        as stated in miliseconds.
+    </p>
+    <p>
+        Both timers return an id that can be used to clear the timer<br />
+        using the <i>clearTimeout(id)</i> and <i>clearInterval(id)</i>
+    </p>
+    <hr />
+    <button onclick="setTimeout(changeStyles, 4000);">Changes in style will ocur after some delay</button>
+    <p id="para1">
+        This text will change color and font after 4 seconds
+    </p>
+    <hr />
+    <button onclick="setTimeout(changeDivStyle, 3000);">Watch this box dissappear</button>
+    <button onclick="setTimeout(visibleBox, 500);">Reappearing button</button>
+    <br /><br />
+    <button onclick="popupWindow();">Click to see if you've won!</button>
+    <div id="div1"></div>
+</body>
+</html>

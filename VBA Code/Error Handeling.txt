@@ -1,0 +1,101 @@
+Public Declare Function GetUserName Lib "advapi32.dll" Alias "GetUserNameA" _
+(ByVal IpBuffer As String, nSize As Long) As Long
+
+Public Declare Function GetComputerName Lib "kernel32" Alias "GetComputerNameA" _
+(ByVal IpBuffer As String, nSize As Long) As Long
+
+Public Sub LogError(errX As ErrObject, Optional strProcName As String)
+'this is Windows Scripting Code, and requires a reference to the Microsoft Scripting Runtime
+'under Tools, References from any module
+
+Dim fso As Scripting.FileSystemObject
+Dim fil As File
+Dim tso As TextStream
+Dim strPath As String
+Dim ingErrNum As Long
+Dim strErrText As String
+
+Set fso = New Scripting.FileSystemObject
+ingErrNum = errX.Number
+strErrText = errX.Description
+errX.Clear  'clear error after storing info in variables, to avoid triggering error handler!
+
+'If you want to use a different path, change it here
+strPath = "C:\Practice"
+
+'Error wrapper down here on purpose, AFTER we captured the passed error info
+On Error GoTo LogError_Error
+
+'no folder and no file, create both
+If Not fso.FolderExists(strPath) Then
+    fso.CreateFolder (strPath)
+    fso.CreateTextFile (strPath & "\ErrorLog.txt:")
+'folder exists, but no file, create file
+ElseIf Not fso.FileExists(strPath & "\ErrorLog.txt") Then
+    fso.CreateTextFile (strPath & "\ErrorLog.txt")
+Else
+'both exist, do nothing
+End If
+'set reference to error log file
+Set fil = fso.GetFile(strPath & "\ErrorLog.txt")
+Set tso = fil.OpenAsTextStream(ForAppending)
+
+With tso
+    .WriteLine "Who Caused the Error: " & EnteredBy()
+    .WriteLine "What Error No: " & ingErrNum
+    .WriteLine "Description: " & strErrText
+    .WriteLine "When it occurred: " & Now()
+If Len(strProcName) > 0 Then
+    .WriteLine "Where it occurred: " & strProcName
+Else
+End If
+    .WriteLine "Computer name: " & ComputerName()
+    .WriteBlankLines (1)
+    .Close
+End With
+
+logError_Exit:
+    Exit Sub
+LogError_Error:
+    MsgBox "There was an error logging your error! Error Number: " & Err.Number & vbCrLf & Err.Description
+    Resume logError_Exit
+    
+End Sub
+
+Public Function EnteredBy()
+'Retrieve the name of the user, using Win API call
+On Error GoTo EnteredBy_Error
+Dim strBuffer As String
+Dim IngLen As Long
+
+    strBuffer = Space(35)
+    IngLen = Len(strBuffer)
+    If CBool(GetUserName(strBuffer, IngLen)) Then
+        EnteredBy = Left$(strBuffer, IngLen)
+    Else
+        EnteredBy = ""
+    End If
+    
+EnteredBy_Exit:
+    Exit Function
+    
+EnteredBy_Error:
+    MsgBox "There was an error! Error No: " & Err.Number & vbCrLf & Err.Description
+    Resume EnteredBy_Exit
+    
+End Function
+
+Property Get ComputerName() As String
+'You can set or retrieve the name of the computer, using a Property
+    Dim strBuffer As String
+    Dim IngLen As Long
+    
+    strBuffer = Space(35)
+    IngLen = Len(strBuffer)
+    If CBool(GetComputerName(strBuffer, IngLen)) Then
+        ComputerName = Left$(strBuffer, IngLen)
+    Else
+        ComputerName = ""
+    End If
+    
+End Property

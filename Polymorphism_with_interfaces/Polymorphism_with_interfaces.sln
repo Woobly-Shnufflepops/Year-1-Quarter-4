@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interace_Client", "Interace_Client\Interace_Client.csproj", "{6C7724AE-6A47-4DF0-B2ED-E0298F37A23A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism_Interface_Lib", "Polymorphism_Interface_Lib\Polymorphism_Interface_Lib.csproj", "{111EC6D6-E828-410F-9F02-BD0A80A660E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C7724AE-6A47-4DF0-B2ED-E0298F37A23A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C7724AE-6A47-4DF0-B2ED-E0298F37A23A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C7724AE-6A47-4DF0-B2ED-E0298F37A23A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C7724AE-6A47-4DF0-B2ED-E0298F37A23A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111EC6D6-E828-410F-9F02-BD0A80A660E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111EC6D6-E828-410F-9F02-BD0A80A660E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111EC6D6-E828-410F-9F02-BD0A80A660E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111EC6D6-E828-410F-9F02-BD0A80A660E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

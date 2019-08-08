@@ -1,0 +1,75 @@
+Sub ListFilesInFolder(SourceFolderName As String, IncludeSubfolders As Boolean)
+'this is Windows Scripting Code and requires a reference to the Windows Script Host
+'(or Microsoft Scripting Runtime) under Tools, References, from any module
+'if you don't see it in the list, you can download it from Microsoft at:
+'http://msdn.microsoft.com/library/default.asp?url=/downloads/list/webdev.asp
+'lists information about the files in SourceFolder
+'To call this procedure use this syntax: ListFilesInFolder "C:\Foldername\", True
+Dim FSO As FileSystemObject
+Dim SourceFolder As Folder, SubFolder As Folder
+Dim FileItem As File
+Dim r As Long
+    Set FSO = New FileSystemObject
+    Set SourceFolder = FSO.GetFolder(SourceFolderName)
+    r = Range("A65536").End(xlUp).Row + 1
+    For Each FileItem In SourceFolder.Files
+        'display file properties
+        Cells(r, 1).Formula = FileItem.Name
+        Cells(r, 2).Formula = FileItem.Size
+        Cells(r, 3).Formula = FileItem.Type
+        Cells(r, 4).Formula = FileItem.DateCreated
+        Cells(r, 5).Formula = FileItem.DateLastAccessed
+        Cells(r, 6).Formula = FileItem.DateLastModified
+        Cells(r, 7).Formula = FileItem.Attributes
+        Cells(r, 8).Formula = FileItem.ShortName
+        
+        'other FSO file methods (not appropriate in this example)
+        'FileItem.Copy "C:\FolderName\Filename.txt", True
+        'FileItem.Move "C:\FolderName\Filename.txt"
+        'FileItem.Delete True
+    r = r + 1 'next row number
+    Next FileItem
+    If IncludeSubfolders Then
+        For Each SubFolder In SourceFolder.SubFolders
+            ListFilesInFolder SubFolder.Path, True
+        Next SubFolder
+    End If
+    Columns("A:H").AutoFit
+    Set FileItem = Nothing
+    Set SourceFolder = Nothing
+    Set FSO = Nothing
+    ActiveWorkbook.Saved = True
+    
+End Sub
+
+Sub SetupFileList()
+Dim wkb As Workbook
+Set wkb = Application.ActiveWorkbook
+With wkb
+    With Range("A1")
+        .Formula = "Folder contents:"
+        .Font.Bold = True
+        .Font.Size = 12
+    End With
+    Range("A3").Formula = "File Name:"
+    Range("B3").Formula = "File Size:"
+    Range("C3").Formula = "File Type:"
+    Range("D3").Formula = "File Date Created:"
+    Range("E3").Formula = "File Date Last Accessed:"
+    Range("F3").Formula = "File Date Last Modified:"
+    Range("G3").Formula = "File Attributes:"
+    Range("H3").Formula = "Short File name:"
+    Range("A3:H3").Font.Bold = True
+    
+'call procedure to list all files including subfolders
+
+Call ListFilesInFolder("C:\Practice\", True)
+
+End With
+
+MsgBox "All done!"
+
+Set wkb = Nothing
+Set FSO = Nothing
+
+End Sub

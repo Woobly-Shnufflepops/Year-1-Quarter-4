@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        p+p{color:red}
+    </style>
+</head>
+<body>
+    <!--
+    The adjacent sibling selector specifies an element that immediately follows another
+        element when both of the elements are siblings. Sibling elements share the smae
+        parent element. The syntax is two selectors seperated by a plus (+) sign. The
+        style is applied to the element specified on the right side of the plus sign
+        when it immediatly follows the element specified on the left.    
+    -->
+    <!--
+    h1,first p, and second p are all siblings of the body tag
+        the first p is the adjacent sibling of h1
+        even though the second p is a sibling of h1, it is not an adjacent sibling of h1
+        and therefore it won't be affected by the selector: h1 > p, which means affect the
+        style of the p tag that is the adjacent sibling of h1 (the first p tag that come after h1)    
+    -->
+
+    <h1>The red style has not been applied to this element.</h1>
+    <p>The red style has not been applied ot this element.</p>
+    <p>The red style has been applied to this element</p>
+</body>
+</html>

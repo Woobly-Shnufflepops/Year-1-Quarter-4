@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var index = 1;
+        function createNewP_Element() {
+            //create a p element
+            var para = document.createElement("p");
+            //add an ID to it
+            var a = document.createAttribute("id");
+            //Combine the attribute (id) and element (p) together
+            index++;
+            para.setAttribute("id", "para1" + index);
+            //add text to it
+            //create a text node
+            var text = document.createTextNode("The index value is: " + index);
+            //append this text to the p tag
+            para.appendChild(text);
+            //append it to this document in the div tag
+            //first get a reference to the div tag, then apply the appendChild
+            document.getElementById("div1").appendChild(para);
+        }
+        function createNewListElement() {
+            //create a new ol element with at least 3 items.
+            var ol = document.createElement("ol");
+            for (var i = 0; i < 5; i++) {
+                var li = document.createElement("li");
+                var text = document.createTextNode("The index value is: " + index++);
+                li.appendChild(text);
+                ol.appendChild(li);
+            }
+            document.getElementById("div1").appendChild(ol);
+        }
+        //
+    </script>
+</head>
+<body onload="createNewListElement();">
+    <h5>DOM Create New Element</h5>
+    <p>
+        The DOM defines a set of methods that allow you to create new elements and add them to a web page.<br />
+    </p>
+    <p>
+        We're going to use three methods:<br />
+        <i>createElement</i>, <i>createTextNode</i>, and <i>appendChild</i>
+    </p>
+    <hr />
+    <button onclick="createNewP_Element();">Add a new P tag</button>
+    <button onclick="createNewListElement();">Add a new List</button>
+    <div id="div1">
+        <!--Empty container that will be populated programmatically through javascript using DOM methods-->
+    </div>
+</body>
+</html>
+<!--
+    
+Exercise: Create a table with 2 rows and 2 columns through javascript
+    (add any text you want within each cell)
+
+    will be putting some review questions on canvas
+
+-->

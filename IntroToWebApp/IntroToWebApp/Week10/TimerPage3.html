@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #para1{width:150px; height:150px; background-color:maroon;}
+    </style>
+
+    <!--------------------------------------------------------------->
+
+    <script>
+        var timerID;
+        function getRandomColor() {
+            var hexLetters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                var index = Math.floor(Math.random() * 16);
+                color += hexLetters[index];
+            }
+            return color;
+        }
+        function changeColor() {
+            var color = getRandomColor();
+            document.getElementById("para1").style.backgroundColor = color;
+        }
+        function startTimer() {
+            timerID = setInterval(changeColor, 100);
+        }
+        function stopTimer() {
+            clearInterval(timerID);
+        }
+    </script>
+</head>
+<body>
+    <h4>interval timer: color sequencer</h4>
+
+    <button onclick="startTimer();">Random colors!</button>
+    <button onclick="stopTimer();">Stop!</button>
+
+    <p id="para1">
+
+    </p>
+</body>
+</html>
